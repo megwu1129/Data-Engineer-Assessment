@@ -13,5 +13,9 @@ acquisition_df.rename(columns={'count': 'acquisitions'}, inplace=True)
 # Convert back to datetime type
 acquisition_df['created_dt'] = pd.to_datetime(acquisition_df['created_dt'])
 
+# Rename the column
+acquisition_df = acquisition_df.rename(columns={'created_dt':'acquisition_date'})
+
+
 # Export to a new CSV file
 acquisition_df.to_csv('acquisition_facts.csv', index=False)
